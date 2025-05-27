@@ -36,6 +36,17 @@ function promptOptions() {
                     if(numInput.trim().toLowerCase() === 'y') chars += NUMBERS
                     //Add symbols if selected
                     if(symInput.trim().toLowerCase() === 'y') chars += SYMBOLS
+
+                    // Generate the password using random selection from the character pool
+                    let password = ''
+                    for(let i = 0; i < length; i++) {
+                        //randomly select a char from the char string
+                        const idx = Math.floor(Math.random() * chars.length)
+                        password += chars[idx]
+                    }
+                    //Output the generated password to the user
+                    console.log('\nYour generated password:\n' + password)
+                    rl.close
                     
                 })
             })
@@ -43,3 +54,4 @@ function promptOptions() {
 
     })
 }
+// Start the app by printing the title and prompting the user

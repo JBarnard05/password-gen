@@ -22,6 +22,24 @@ function promptOptions() {
             console.log('Please enter a number greater than or equal to 4.')
             return promptOptions   //prompt again on invalid input
         }
+        //Ask the user if uppercase should be included
+        rl.question('Include uppercase letters? (y/n): ', upperInput => {
+            // Ask user if numbers are included
+            rl.question('Include numbers? (y/n): ', numInput => {
+                //Ask user if symbols are included
+                rl.question('Include symbols? (y/n): ', symInput => {
+                    let chars = LOWER  //always include lowercase by default
+
+                    //Add uppercase letters if selected
+                    if(upperInput.trim().toLowerCase() === 'y') chars += UPPER
+                    //Add numbers if selected
+                    if(numInput.trim().toLowerCase() === 'y') chars += NUMBERS
+                    //Add symbols if selected
+                    if(symInput.trim().toLowerCase() === 'y') chars += SYMBOLS
+                    
+                })
+            })
+        })
 
     })
 }

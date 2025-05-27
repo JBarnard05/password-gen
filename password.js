@@ -55,3 +55,7 @@ function promptOptions() {
     })
 }
 // Start the app by printing the title and prompting the user
+
+    console.log('Welcome to password generator')
+    promptOptions()
+ 
